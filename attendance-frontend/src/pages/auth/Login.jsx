@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import styles from "./Login.module.css";
-import backgroundImg from "C:/Users/HP/Desktop/My Projects/attendance-frontend/src/assets/gcek1.jpg"; // ✅ keep image inside src/assets
-import logo from "C:/Users/HP/Desktop/My Projects/attendance-frontend/src/assets/logo.png";
+import backgroundImg from "../../assets/gcek1.jpg"; // ✅ keep image inside src/assets
+import logo from "../../assets/logo.png";
 
 function Login() {
   const navigate = useNavigate();
@@ -29,7 +29,7 @@ function Login() {
     const password = e.target.password.value;
 
     try {
-      const res = await fetch("http://localhost/attendance-system/attendance-backend/api/auth/login_old.php", {
+      const res = await fetch("http://localhost/attendance_system/api/auth/login_old.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),
@@ -37,7 +37,7 @@ function Login() {
 
       const data = await res.json();
 
-      // const res = await fetch("http://attenzo.site.jehttp://localhost/attendance-system/attendance-backend/api/auth/loginNew.php", {
+      // const res = await fetch("http://attenzo.site.jehttp://localhost/attendance_system/api/auth/loginNew.php", {
       //   method: "POST",
       //   headers: {
       //     "Content-Type": "application/json"
@@ -56,7 +56,7 @@ function Login() {
 
       // const data = JSON.parse(responseText);
 
-      // fetch("localhosthttp://localhost/attendance-system/attendance-backend/api/auth/simple.php")
+      // fetch("localhosthttp://localhost/attendance_system/api/auth/simple.php")
       //   .then(res => res.text())
       //   .then(data => console.log(data))
       //   .catch(err => console.log(err));
