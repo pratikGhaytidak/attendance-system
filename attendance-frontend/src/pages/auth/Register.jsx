@@ -56,8 +56,8 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import styles from "./Register.module.css";
-import backgroundImg from "C:/Users/HP/Desktop/My Projects/attendance-frontend/src/assets/gcek1.jpg"; // ✅ keep image inside src/assets
-import logo from "C:/Users/HP/Desktop/My Projects/attendance-frontend/src/assets/logo.png";
+import backgroundImg from "../../assets/gcek1.jpg"; // ✅ keep image inside src/assets
+import logo from "../../assets/logo.png";
 
 function Register() {
   const navigate = useNavigate();
