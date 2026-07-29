@@ -20,7 +20,7 @@ function ManageFaculty() {
 
     try {
       const res = await fetch(
-        `http://localhost/attendance_system/api/hod/getFacultyByDepartment.php?department_id=${deptId}`
+        `http://localhost/attendance-system/attendance-backend/api/hod/getFacultyByDepartment.php?department_id=${deptId}`
       );
 
       const data = await res.json();
@@ -54,7 +54,7 @@ function ManageFaculty() {
 
     try {
       const res = await fetch(
-        `http://localhost/attendance_system/api/hod/deleteFaculty.php?id=${id}`
+        `http://localhost/attendance-system/attendance-backend/api/hod/deleteFaculty.php?id=${id}`
       );
 
       const data = await res.json();

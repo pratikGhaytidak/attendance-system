@@ -22,7 +22,7 @@ function SubjectPage() {
       return;
     }
 
-    fetch(`http://localhost/attendance_system/api/student/getStudents.php?department_id=${departmentId}&year=${year}`)
+    fetch(`http://localhost/attendance-system/attendance-backend/api/student/getStudents.php?department_id=${departmentId}&year=${year}`)
       .then(res => res.json())
       .then(data => {
         setStudents(data);

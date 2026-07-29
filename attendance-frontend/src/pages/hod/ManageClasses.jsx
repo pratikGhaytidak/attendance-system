@@ -28,7 +28,7 @@ function ManageClasses() {
 
         try {
             const res = await fetch(
-                `http://localhost/attendance_system/api/hod/getClassesByDepartment.php?department_id=${departmentId}`
+                `http://localhost/attendance-system/attendance-backend/api/hod/getClassesByDepartment.php?department_id=${departmentId}`
             );
 
             const data = await res.json();
@@ -56,7 +56,7 @@ function ManageClasses() {
 
         try {
             const res = await fetch(
-                `http://localhost/attendance_system/api/hod/getFacultyByDepartment.php?department_id=${departmentId}`
+                `http://localhost/attendance-system/attendance-backend/api/hod/getFacultyByDepartment.php?department_id=${departmentId}`
             );
 
             const data = await res.json();
@@ -120,8 +120,8 @@ function ManageClasses() {
             };
 
             const url = editId
-                ? "http://localhost/attendance_system/api/hod/updateClass.php"
-                : "http://localhost/attendance_system/api/hod/addClass.php";
+                ? "http://localhost/attendance-system/attendance-backend/api/hod/updateClass.php"
+                : "http://localhost/attendance-system/attendance-backend/api/hod/addClass.php";
 
             const res = await fetch(url, {
                 method: "POST",

@@ -13,7 +13,7 @@ function ShowSubjectAttendance() {
 
   useEffect(() => {
     fetch(
-      `http://localhost/attendance_system/api/attendance/getAttendanceBySubject.php?subject_id=${id}`
+      `http://localhost/attendance-system/attendance-backend/api/attendance/getAttendanceBySubject.php?subject_id=${id}`
     )
       .then((res) => res.json())
       .then((data) => {

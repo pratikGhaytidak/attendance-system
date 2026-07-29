@@ -25,7 +25,7 @@ function AddFaculty() {
     e.preventDefault();
     setLoading(true);
 
-    fetch("http://localhost/attendance_system/api/hod/add_faculty.php", {
+    fetch("http://localhost/attendance-system/attendance-backend/api/hod/add_faculty.php", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData),

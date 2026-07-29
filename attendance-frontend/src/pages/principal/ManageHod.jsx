@@ -15,7 +15,7 @@ function ManageHod() {
   const [hods, setHods] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost/attendance_system/api/principal/getHods.php")
+    fetch("http://localhost/attendance-system/attendance-backend/api/principal/getHods.php")
       .then((res) => res.json())
       .then((data) => {
         setHods(data);

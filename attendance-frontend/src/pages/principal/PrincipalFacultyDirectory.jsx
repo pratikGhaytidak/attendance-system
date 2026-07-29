@@ -8,7 +8,7 @@ function PrincipalFacultyDirectory() {
 
   const fetchFaculty = (type = "active") => {
     setLoading(true);
-    fetch(`http://localhost/attendance_system/api/principal/getFacultyByDepartment.php?status=${type}`)
+    fetch(`http://localhost/attendance-system/attendance-backend/api/principal/getFacultyByDepartment.php?status=${type}`)
       .then(res => res.json())
       .then(data => {
         if (data.success) {

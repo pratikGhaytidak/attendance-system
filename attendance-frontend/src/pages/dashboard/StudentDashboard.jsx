@@ -10,7 +10,7 @@ function StudentDashboard() {
     const email = localStorage.getItem("email");
 
     fetch(
-      `http://localhost/attendance_system/api/student/getStudentByEmail.php?email=${email}`
+      `http://localhost/attendance-system/attendance-backend/api/student/getStudentByEmail.php?email=${email}`
     )
       .then((res) => res.json())
       .then((data) => {

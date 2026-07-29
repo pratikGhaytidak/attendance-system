@@ -23,7 +23,7 @@ function HodDashboard() {
 
         try {
             const res = await fetch(
-                `http://localhost/attendance_system/api/hod/getHodDetails.php?faculty_id=${facultyId}`
+                `http://localhost/attendance-system/attendance-backend/api/hod/getHodDetails.php?faculty_id=${facultyId}`
             );
             const data = await res.json();
 
@@ -49,7 +49,7 @@ function HodDashboard() {
 
         try {
             const res = await fetch(
-                `http://localhost/attendance_system/api/hod/getFacultyByDepartment.php?department_id=${departmentID}`
+                `http://localhost/attendance-system/attendance-backend/api/hod/getFacultyByDepartment.php?department_id=${departmentID}`
             );
 
             if (!res.ok) throw new Error(`HTTP ${res.status}`);

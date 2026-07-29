@@ -17,7 +17,7 @@ function ViewAttendance() {
 
         setLoading(true);
         try {
-            let url = `http://localhost/attendance_system/api/attendance/getAttendanceByFaculty.php?faculty_id=${facultyId}`;
+            let url = `http://localhost/attendance-system/attendance-backend/api/attendance/getAttendanceByFaculty.php?faculty_id=${facultyId}`;
             if (date) url += `&date=${date}`;
 
             const res = await fetch(url);

@@ -30,7 +30,7 @@ const FacultySubjects = () => {
   const fetchMappings = () => {
     setLoading(true);
     fetch(
-      `http://localhost/attendance_system/api/hod/getFacultySubjectMapping.php?department_id=${deptId}`
+      `http://localhost/attendance-system/attendance-backend/api/hod/getFacultySubjectMapping.php?department_id=${deptId}`
     )
       .then((res) => res.json())
       .then((res) => {
@@ -56,7 +56,7 @@ const FacultySubjects = () => {
 
     try {
       const res = await fetch(
-        "http://localhost/attendance_system/api/hod/deleteFacultySubjectMapping.php",
+        "http://localhost/attendance-system/attendance-backend/api/hod/deleteFacultySubjectMapping.php",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

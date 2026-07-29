@@ -23,7 +23,7 @@ function EditFacultyForm() {
   useEffect(() => {
     if (!id) return;
 
-    fetch(`http://localhost/attendance_system/api/hod/getFacultyById.php?id=${id}`)
+    fetch(`http://localhost/attendance-system/attendance-backend/api/hod/getFacultyById.php?id=${id}`)
       .then((res) => res.json())
       .then((data) => {
         console.log("Edit API Response:", data);
@@ -61,7 +61,7 @@ function EditFacultyForm() {
     e.preventDefault();
     setLoading(true);
 
-    fetch("http://localhost/attendance_system/api/hod/updateFaculty.php", {
+    fetch("http://localhost/attendance-system/attendance-backend/api/hod/updateFaculty.php", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

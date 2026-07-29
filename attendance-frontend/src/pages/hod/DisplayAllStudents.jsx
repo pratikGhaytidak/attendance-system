@@ -17,9 +17,9 @@ function DisplayAllStudents() {
     }
 
     fetch(
-      //`http://localhost/attendance_system/api/hod/get_students_by_department.php?department_id=${departmentID}`
-      //`http://attenzo.site.jehttp://localhost/attendance_system/api/hod/get_students_by_department.php?department_id=${departmentID}`
-      `http://localhost/attendance_system/api/hod/get_students_by_department.php?department_id=${departmentID}`
+      //`http://localhost/attendance-system/attendance-backend/api/hod/get_students_by_department.php?department_id=${departmentID}`
+      //`http://attenzo.site.jehttp://localhost/attendance-system/attendance-backend/api/hod/get_students_by_department.php?department_id=${departmentID}`
+      `http://localhost/attendance-system/attendance-backend/api/hod/get_students_by_department.php?department_id=${departmentID}`
     )
       .then((res) => res.json())
       .then((data) => {

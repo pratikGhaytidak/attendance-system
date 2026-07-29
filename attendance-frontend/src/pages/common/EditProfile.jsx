@@ -27,7 +27,7 @@ function EditProfile() {
             return;
         }
 
-        fetch(`http://localhost/attendance_system/api/common/getProfile.php?email=${storedEmail}`)
+        fetch(`http://localhost/attendance-system/attendance-backend/api/common/getProfile.php?email=${storedEmail}`)
             .then((res) => res.json())
             .then((data) => {
                 console.log("API Response:", data);
@@ -69,7 +69,7 @@ function EditProfile() {
 
         try {
             const res = await fetch(
-                "http://localhost/attendance_system/api/common/updateProfile.php",
+                "http://localhost/attendance-system/attendance-backend/api/common/updateProfile.php",
                 {
                     method: "POST",
                     headers: {

@@ -22,7 +22,7 @@ function ResetPassword() {
 
     try {
       const res = await fetch(
-        "http://localhost/attendance_system/api/common/updatePassword.php",
+        "http://localhost/attendance-system/attendance-backend/api/common/updatePassword.php",
         {
           method: "POST",
           headers: {

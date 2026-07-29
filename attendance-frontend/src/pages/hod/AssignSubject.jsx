@@ -22,7 +22,7 @@ function AssignSubject() {
 
     // Faculty fetch
     fetch(
-      `http://localhost/attendance_system/api/hod/getFacultyByDepartment.php?department_id=${department_id}`
+      `http://localhost/attendance-system/attendance-backend/api/hod/getFacultyByDepartment.php?department_id=${department_id}`
     )
       .then((res) => res.json())
       .then((data) => {
@@ -43,7 +43,7 @@ function AssignSubject() {
 
     // Subject fetch
     fetch(
-      `http://localhost/attendance_system/api/hod/getSubjectByDepartment.php?department_id=${department_id}`
+      `http://localhost/attendance-system/attendance-backend/api/hod/getSubjectByDepartment.php?department_id=${department_id}`
     )
       .then((res) => res.json())
       .then((data) => {
@@ -77,7 +77,7 @@ function AssignSubject() {
     e.preventDefault();
     setLoading(true);
 
-    fetch("http://localhost/attendance_system/api/hod/assign_subject.php", {
+    fetch("http://localhost/attendance-system/attendance-backend/api/hod/assign_subject.php", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

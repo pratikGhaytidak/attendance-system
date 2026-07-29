@@ -17,9 +17,9 @@ function Reports() {
     let apiUrl = "";
 
     if (role === "hod") {
-      apiUrl = `http://localhost/attendance_system/api/hod/getSubjectByDepartment.php?department_id=${departmentId}`;
+      apiUrl = `http://localhost/attendance-system/attendance-backend/api/hod/getSubjectByDepartment.php?department_id=${departmentId}`;
     } else {
-      apiUrl = `http://localhost/attendance_system/api/subject/getSubjects.php?faculty_id=${facultyId}`;
+      apiUrl = `http://localhost/attendance-system/attendance-backend/api/subject/getSubjects.php?faculty_id=${facultyId}`;
     }
 
     fetch(apiUrl)
@@ -115,7 +115,7 @@ function Reports() {
     setMessage("");
 
     fetch(
-      `http://localhost/attendance_system/api/reports/subjectWiseReport.php?subject_id=${subjectId}`
+      `http://localhost/attendance-system/attendance-backend/api/reports/subjectWiseReport.php?subject_id=${subjectId}`
     )
       .then((res) => res.json())
       .then((data) => {
