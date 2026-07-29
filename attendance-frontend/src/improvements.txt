@@ -1,0 +1,26 @@
+Date: 20/04/2026
+    1. In faculty profile -> Academic -> Display his subjects -- Done ✅
+
+    2. In faculty -> View Attendance -> Display Attendance by Subject not by Faculty. -- Done ✅
+
+    3. In Profile -> Setting -> Remove Delete Account option  --Done ✅
+
+    4. In Profile -> Setting -> Develop Change password option --Done ✅
+
+    5. In Profile -> Make sure Attendance and Subject tab should display for students only --Done ✅
+
+    6. In Hod login -> Develop assigining class teacher and remove classteacher feature --Done ✅
+
+    7. In Hod login -> Develop deleting faculty feature -- Done ✅ by prasad
+
+    8. In Faculty login -> Develop editing , deleting students feature  --Done ✅
+
+    9. Develop Principal login. -- In Progress by prasad 📊
+
+    10. In Profile -> Develop edit profile feature --Done ✅
+
+    11. Report Generation -- Not Developyed Yet ❌
+
+
+Date: 20/04/2026
+    1. In Profile -> Develop edit profile feature --Done ✅

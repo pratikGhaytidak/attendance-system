@@ -1,0 +1,202 @@
+/* PrincipalFacultyDirectory.css - Orange/White Theme (Scoped to .principal-faculty-app) */
+
+.principal-faculty-app .pfd-page {
+  min-height: 100vh;
+  padding: 2rem;
+  background: radial-gradient(circle at 10% 30%, #ffffff, #f8f9fa);
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+}
+
+/* Header section */
+.principal-faculty-app .pfd-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.principal-faculty-app .pfd-header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #f59e0b 0%, #ea580c 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  margin: 0 0 0.5rem 0;
+}
+
+.principal-faculty-app .header-underline {
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, #f59e0b, #ea580c);
+  border-radius: 2px;
+  margin: 0 auto 0.8rem auto;
+}
+
+.principal-faculty-app .pfd-header p {
+  color: #64748b;
+  font-size: 1rem;
+}
+
+/* Toggle buttons */
+.principal-faculty-app .pfd-toggle {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.principal-faculty-app .toggle-btn {
+  padding: 0.6rem 1.5rem;
+  border: 1px solid #e2e8f0;
+  background: white;
+  border-radius: 2rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  color: #1e293b;
+}
+
+.principal-faculty-app .toggle-btn:hover {
+  border-color: #fcd34d;
+  background: #fef3c7;
+}
+
+.principal-faculty-app .toggle-btn.active {
+  background: linear-gradient(135deg, #f59e0b 0%, #ea580c 100%);
+  color: white;
+  border: none;
+  box-shadow: 0 2px 8px rgba(245, 158, 11, 0.3);
+}
+
+/* Loading spinner */
+.principal-faculty-app .pfd-loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem;
+}
+
+.principal-faculty-app .spinner {
+  width: 48px;
+  height: 48px;
+  border: 3px solid #e2e8f0;
+  border-top: 3px solid #f59e0b;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Table wrapper – responsive scroll */
+.principal-faculty-app .pfd-table-wrapper {
+  overflow-x: auto;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+}
+
+/* Table styles */
+.principal-faculty-app .pfd-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  min-width: 600px;
+}
+
+.principal-faculty-app .pfd-table thead tr {
+  background: linear-gradient(135deg, #fef3c7, #fde68a);
+  border-bottom: 2px solid #f59e0b;
+}
+
+.principal-faculty-app .pfd-table th {
+  padding: 1rem;
+  text-align: left;
+  font-weight: 700;
+  color: #1e293b;
+  font-size: 0.9rem;
+}
+
+.principal-faculty-app .pfd-table td {
+  padding: 0.9rem 1rem;
+  border-bottom: 1px solid #edf2f7;
+  color: #334155;
+}
+
+.principal-faculty-app .pfd-table tbody tr:hover {
+  background: #fef3c7;
+  transition: background 0.2s;
+}
+
+/* Status badge */
+.principal-faculty-app .status-badge {
+  display: inline-block;
+  padding: 0.2rem 0.7rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.principal-faculty-app .status-badge.active {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.principal-faculty-app .status-badge.inactive {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+/* Empty row */
+.principal-faculty-app .empty-row {
+  text-align: center;
+  padding: 2rem;
+  color: #64748b;
+  font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .principal-faculty-app .pfd-page {
+    padding: 1rem;
+  }
+  .principal-faculty-app .pfd-header h1 {
+    font-size: 1.5rem;
+  }
+  .principal-faculty-app .toggle-btn {
+    padding: 0.5rem 1.2rem;
+    font-size: 0.8rem;
+  }
+  /* Stack table cells on small screens */
+  .principal-faculty-app .pfd-table thead {
+    display: none;
+  }
+  .principal-faculty-app .pfd-table tbody tr {
+    display: block;
+    margin-bottom: 1rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.75rem;
+    padding: 0.5rem;
+  }
+  .principal-faculty-app .pfd-table td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.5rem 0.8rem;
+    border-bottom: none;
+  }
+  .principal-faculty-app .pfd-table td::before {
+    content: attr(data-label);
+    font-weight: 700;
+    color: #1e293b;
+    min-width: 100px;
+  }
+  .principal-faculty-app .pfd-table td:last-child {
+    border-bottom: none;
+  }
+}

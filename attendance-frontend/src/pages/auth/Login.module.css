@@ -1,0 +1,226 @@
+/* ===== Page ===== */
+.loginPage {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  position: relative;
+  animation: fadeIn 0.8s ease-in-out; /* ✅ added */
+}
+
+/* Background overlay */
+.loginPage::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 0;
+}
+
+/* ===== Glass Card ===== */
+.loginCard {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 460px;
+  padding: 2.5rem 2rem;
+
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+
+  animation: cardEnter 0.6s ease forwards; /* ✅ added */
+  transition: transform 0.3s ease;
+}
+
+.loginCard:hover {
+  transform: translateY(-5px);
+}
+
+/* ===== Logo ===== */
+.logo {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.logo img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: white;
+  padding: 5px;
+  transition: all 0.4s ease; /* ✅ added */
+}
+
+.logo img:hover {
+  transform: rotate(5deg) scale(1.1);
+}
+
+/* ===== Headings ===== */
+.loginCard h2 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #ffffff;
+  text-align: center;
+}
+
+.collegeName {
+  text-align: center;
+  color: #e2e8f0;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  padding-bottom: 0.8rem;
+}
+
+/* ===== Inputs ===== */
+.inputGroup {
+  margin-bottom: 1.2rem;
+}
+
+.inputGroup input {
+  width: 100%;
+  padding: 0.85rem;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.85);
+  transition: all 0.25s ease; /* ✅ added */
+}
+
+/* Hover */
+.inputGroup input:hover {
+  transform: scale(1.02);
+}
+
+/* Focus */
+.inputGroup input:focus {
+  transform: scale(1.03);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.3);
+}
+
+/* ===== Captcha ===== */
+.captchaGroup {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 1.5rem;
+}
+
+.captchaQuestion {
+  padding: 0.7rem 1rem;
+  border-radius: 10px;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.captchaGroup input {
+  flex: 1;
+  padding: 0.7rem;
+  border-radius: 10px;
+  border: none;
+  background: rgba(255, 255, 255, 0.85);
+}
+
+/* ===== Buttons ===== */
+.loginBtn,
+.backBtn {
+  width: 100%;
+  padding: 0.8rem;
+  border-radius: 10px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 0.7rem;
+  transition: all 0.25s ease; /* ✅ added */
+}
+
+/* Login */
+.loginBtn {
+  background: linear-gradient(135deg, #7ebbed, #0d81e0);
+  color: white;
+}
+
+.loginBtn:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  background: #1d4ed8;
+}
+
+.loginBtn:active {
+  transform: scale(0.97);
+}
+
+/* Back */
+.backBtn {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.backBtn:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.9);
+}
+
+/* ===== Register Link ===== */
+.registerLink {
+  text-align: center;
+  color: #e2e8f0;
+  font-size: 0.9rem;
+}
+
+.registerLink a {
+  color: #93c5fd;
+  text-decoration: none;
+  position: relative;
+}
+
+/* underline animation */
+.registerLink a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0%;
+  height: 2px;
+  background: #93c5fd;
+  transition: width 0.3s ease;
+}
+
+.registerLink a:hover::after {
+  width: 100%;
+}
+
+/* ===== Animations ===== */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes cardEnter {
+  from {
+    transform: translateY(40px) scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+/* ===== Mobile ===== */
+@media (max-width: 480px) {
+  .captchaGroup {
+    flex-direction: column;
+  }
+}

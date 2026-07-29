@@ -1,0 +1,265 @@
+/* DisplayStudents.css - Scoped to .displaystudents-app */
+/* Removed global * reset – now everything is scoped */
+
+.displaystudents-app .students-container {
+  min-height: 100vh;
+  background: radial-gradient(circle at 10% 30%, #ffffff, #f8f9fa);
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.displaystudents-app .students-card {
+  max-width: 1400px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  border-radius: 1.5rem;
+  box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  padding: 0 0 1.5rem 0;
+  border: 1px solid #e2e8f0;
+}
+
+.displaystudents-app .students-header {
+  background: linear-gradient(135deg, #f59e0b 0%, #ea580c 100%);
+  padding: 1.2rem 2rem;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.displaystudents-app .students-header h2 {
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+.displaystudents-app .students-header p {
+  margin: 0;
+  opacity: 0.9;
+  font-size: 0.9rem;
+}
+
+.displaystudents-app .year-section {
+  margin: 1.5rem 1.5rem 0 1.5rem;
+}
+
+.displaystudents-app .year-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+  padding: 0.5rem 0;
+  border-bottom: 2px solid rgba(245, 158, 11, 0.3);
+}
+
+.displaystudents-app .year-badge {
+  background: linear-gradient(135deg, #f59e0b 0%, #ea580c 100%);
+  color: white;
+  padding: 0.3rem 1rem;
+  border-radius: 40px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.displaystudents-app .student-count {
+  font-size: 0.8rem;
+  color: #64748b;
+  background: #f1f5f9;
+  padding: 0.2rem 0.8rem;
+  border-radius: 30px;
+}
+
+.displaystudents-app .table-wrapper {
+  overflow-x: auto;
+  border-radius: 0.75rem;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e2e8f0;
+}
+
+.displaystudents-app .students-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.displaystudents-app .students-table thead tr {
+  background: #f8fafc;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.displaystudents-app .students-table th {
+  padding: 0.8rem 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.displaystudents-app .students-table td {
+  padding: 0.7rem 1rem;
+  border-bottom: 1px solid #edf2f7;
+  color: #334155;
+}
+
+.displaystudents-app .students-table tbody tr:hover {
+  background: #fef3c7;
+}
+
+/* Loading spinner - scoped keyframes */
+.displaystudents-app .loading-spinner {
+  width: 48px;
+  height: 48px;
+  border: 3px solid rgba(245, 158, 11, 0.2);
+  border-top: 3px solid #f59e0b;
+  border-radius: 50%;
+  animation: displaystudents-spin 0.8s linear infinite;
+  margin: 5rem auto;
+}
+
+@keyframes displaystudents-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Error state */
+.displaystudents-app .error-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  text-align: center;
+  max-width: 400px;
+  margin: 3rem auto;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.08);
+}
+
+.displaystudents-app .error-icon {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.displaystudents-app .error-card h3 {
+  color: #dc2626;
+  margin-bottom: 1rem;
+}
+
+.displaystudents-app .retry-btn {
+  background: linear-gradient(135deg, #f59e0b 0%, #ea580c 100%);
+  color: white;
+  border: none;
+  padding: 0.6rem 1.5rem;
+  border-radius: 0.6rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-top: 1rem;
+}
+
+.displaystudents-app .retry-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+}
+
+/* Empty state */
+.displaystudents-app .empty-state {
+  text-align: center;
+  padding: 3rem;
+  color: #64748b;
+}
+
+.displaystudents-app .empty-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+/* Status badges */
+.displaystudents-app .status-badge {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+.displaystudents-app .status-active {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.displaystudents-app .status-inactive {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+/* Action buttons – now scoped, won't affect other buttons */
+.displaystudents-app .action-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.4rem;
+  transition: all 0.2s;
+}
+
+.displaystudents-app .view-btn:hover {
+  background: #fef3c7;
+  transform: scale(1.1);
+}
+
+.displaystudents-app .edit-btn:hover {
+  background: #dbeafe;
+  transform: scale(1.1);
+}
+
+.displaystudents-app .delete-btn:hover {
+  background: #fee2e2;
+  transform: scale(1.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .displaystudents-app .students-container {
+    padding: 1rem;
+  }
+  .displaystudents-app .students-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .displaystudents-app .year-section {
+    margin: 1rem;
+  }
+  .displaystudents-app .students-table th,
+  .displaystudents-app .students-table td {
+    padding: 0.6rem 0.8rem;
+    font-size: 0.8rem;
+  }
+}
+
+/* Custom Scrollbar – scoped to table wrapper */
+.displaystudents-app .table-wrapper::-webkit-scrollbar {
+  height: 6px;
+}
+
+.displaystudents-app .table-wrapper::-webkit-scrollbar-track {
+  background: #e2e8f0;
+  border-radius: 10px;
+}
+
+.displaystudents-app .table-wrapper::-webkit-scrollbar-thumb {
+  background: #f59e0b;
+  border-radius: 10px;
+}
+
+.displaystudents-app .table-wrapper::-webkit-scrollbar-thumb:hover {
+  background: #ea580c;
+}

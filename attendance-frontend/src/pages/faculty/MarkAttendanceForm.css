@@ -1,0 +1,291 @@
+/* MarkAttendanceForm.css - Orange & White Theme */
+
+/* Main container */
+.attendance-form {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  border-radius: 1.5rem;
+  box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.08);
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  border: 1px solid #e2e8f0;
+}
+
+/* Heading */
+.attendance-form h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #f59e0b 0%, #ea580c 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* Header Row */
+.header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #fef3c7;
+}
+
+.date-section {
+  font-size: 16px;
+  font-weight: 500;
+  background: #fef3c7;
+  padding: 6px 12px;
+  border-radius: 20px;
+  color: #ea580c;
+}
+
+.day {
+  color: #64748b;
+  font-size: 14px;
+}
+
+/* Labels */
+.attendance-form label {
+  display: block;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  font-weight: 600;
+  color: #1e293b;
+  font-size: 0.85rem;
+}
+
+/* Text / info */
+.attendance-form p {
+  margin: 10px 0;
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+/* Dropdowns */
+.attendance-form select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.6rem;
+  font-size: 14px;
+  outline: none;
+  transition: all 0.3s;
+  background: white;
+  color: #1e293b;
+  cursor: pointer;
+}
+
+.attendance-form select:hover {
+  border-color: #fcd34d;
+}
+
+.attendance-form select:focus {
+  border-color: #f59e0b;
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.1);
+}
+
+/* Student List Container */
+.students-list {
+  margin-top: 20px;
+  max-height: 300px;
+  overflow-y: auto;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.75rem;
+  padding: 10px;
+  background: #f8fafc;
+}
+
+.student-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #e2e8f0;
+  transition: background 0.2s;
+}
+
+.student-item:last-child {
+  border-bottom: none;
+}
+
+.student-item:hover {
+  background: #fef3c7;
+  border-radius: 0.5rem;
+}
+
+.student-name {
+  font-weight: 500;
+  color: #1e293b;
+  font-size: 0.9rem;
+}
+
+.attendance-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.attendance-btn {
+  padding: 5px 15px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.8rem;
+  transition: all 0.2s;
+}
+
+.attendance-btn.present {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.attendance-btn.present.active {
+  background: #10b981;
+  color: white;
+  box-shadow: 0 2px 6px rgba(16, 185, 129, 0.3);
+}
+
+.attendance-btn.absent {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.attendance-btn.absent.active {
+  background: #ef4444;
+  color: white;
+  box-shadow: 0 2px 6px rgba(239, 68, 68, 0.3);
+}
+
+.attendance-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* Submit Button */
+.attendance-form button {
+  width: 100%;
+  margin-top: 25px;
+  padding: 12px;
+  background: linear-gradient(135deg, #f59e0b 0%, #ea580c 100%);
+  color: white;
+  border: none;
+  border-radius: 0.6rem;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(245, 158, 11, 0.2);
+}
+
+.attendance-form button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(245, 158, 11, 0.3);
+}
+
+.attendance-form button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Loading State */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid #e2e8f0;
+  border-top-color: #f59e0b;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Success & Error Messages */
+.success-message {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+  padding: 12px;
+  border-radius: 0.6rem;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 500;
+  animation: slideDown 0.3s ease;
+}
+
+.error-message {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  color: white;
+  padding: 12px;
+  border-radius: 0.6rem;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 500;
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Custom Scrollbar */
+.students-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.students-list::-webkit-scrollbar-track {
+  background: #e2e8f0;
+  border-radius: 10px;
+}
+
+.students-list::-webkit-scrollbar-thumb {
+  background: #f59e0b;
+  border-radius: 10px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .attendance-form {
+    margin: 20px;
+    padding: 20px;
+  }
+  
+  .attendance-form h1 {
+    font-size: 1.4rem;
+  }
+  
+  .header-row {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+  
+  .student-item {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+  
+  .attendance-buttons {
+    justify-content: center;
+  }
+}

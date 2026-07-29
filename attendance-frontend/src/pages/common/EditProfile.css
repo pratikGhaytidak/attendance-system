@@ -1,0 +1,219 @@
+/* EditProfile.css - Orange & White Theme (Scoped to .editprofile-app) */
+
+.editprofile-app .editprofile-container {
+  min-height: 100vh;
+  padding: 2rem;
+  background: radial-gradient(circle at 10% 30%, #ffffff, #f8f9fa);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+}
+
+.editprofile-app .editprofile-card {
+  max-width: 550px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  border-radius: 1.5rem;
+  box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.08);
+  padding: 2rem;
+  border: 1px solid #e2e8f0;
+  transition: transform 0.2s;
+}
+
+.editprofile-app .editprofile-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 25px 40px -12px rgba(245, 158, 11, 0.15);
+  border-color: #fcd34d;
+}
+
+.editprofile-app .editprofile-header {
+  text-align: center;
+  margin-bottom: 1.8rem;
+}
+
+.editprofile-app .editprofile-header h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #f59e0b 0%, #ea580c 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  margin: 0 0 0.5rem 0;
+}
+
+.editprofile-app .editprofile-header .header-underline {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #f59e0b, #ea580c);
+  border-radius: 2px;
+  margin: 0 auto;
+}
+
+.editprofile-app .form-group {
+  margin-bottom: 1.2rem;
+}
+
+.editprofile-app label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+  color: #1e293b;
+  font-size: 0.85rem;
+}
+
+.editprofile-app input {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 0.6rem;
+  border: 1px solid #e2e8f0;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+  background: white;
+  color: #1e293b;
+}
+
+.editprofile-app input:hover {
+  border-color: #fcd34d;
+}
+
+.editprofile-app input:focus {
+  border-color: #f59e0b;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.1);
+}
+
+.editprofile-app input:disabled {
+  background: #f8fafc;
+  color: #64748b;
+  cursor: not-allowed;
+  border-color: #e2e8f0;
+}
+
+/* Message styles */
+.editprofile-app .info-message {
+  background: #fef3c7;
+  color: #ea580c;
+  padding: 0.75rem;
+  border-radius: 0.6rem;
+  margin-bottom: 1.2rem;
+  text-align: center;
+  font-size: 0.85rem;
+  font-weight: 500;
+  border-left: 4px solid #f59e0b;
+}
+
+.editprofile-app .error-message {
+  background: #fee2e2;
+  color: #991b1b;
+  padding: 0.75rem;
+  border-radius: 0.6rem;
+  margin-bottom: 1.2rem;
+  text-align: center;
+  font-size: 0.85rem;
+  font-weight: 500;
+  border-left: 4px solid #ef4444;
+}
+
+/* Action Buttons Container */
+.editprofile-app .form-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Common Button Style */
+.editprofile-app .form-actions button {
+  flex: 1;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 0.6rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+/* Cancel Button */
+.editprofile-app .cancel-btn {
+  background: #f8fafc;
+  color: #64748b;
+  border: 1px solid #e2e8f0;
+}
+
+.editprofile-app .cancel-btn:hover {
+  background: #f1f5f9;
+  color: #1e293b;
+  border-color: #cbd5e1;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(148, 163, 184, 0.15);
+}
+
+/* Update Button */
+.editprofile-app .update-btn {
+  background: linear-gradient(135deg, #f59e0b 0%, #ea580c 100%);
+  color: white;
+  box-shadow: 0 4px 10px rgba(245, 158, 11, 0.25);
+}
+
+.editprofile-app .update-btn:hover {
+  background: linear-gradient(135deg, #ea580c 0%, #c2410c 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(245, 158, 11, 0.35);
+}
+
+/* Disabled Button */
+.editprofile-app .update-btn:disabled {
+  background: #cbd5e1;
+  color: #ffffff;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+/* Loading state */
+.editprofile-app .loading-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at 10% 30%, #ffffff, #f8f9fa);
+}
+
+.editprofile-app .spinner {
+  width: 48px;
+  height: 48px;
+  border: 3px solid #e2e8f0;
+  border-top: 3px solid #f59e0b;
+  border-radius: 50%;
+  animation: editprofile-spin 0.8s linear infinite;
+}
+
+@keyframes editprofile-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .editprofile-app .editprofile-container {
+    padding: 1rem;
+  }
+
+  .editprofile-app .editprofile-card {
+    padding: 1.5rem;
+  }
+
+  .editprofile-app .editprofile-header h2 {
+    font-size: 1.5rem;
+  }
+
+  /* Buttons stack on mobile */
+  .editprofile-app .form-actions {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .editprofile-app .form-actions button {
+    width: 100%;
+  }
+}

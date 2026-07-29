@@ -1,0 +1,203 @@
+/* ===== Page ===== */
+.registerPage {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.registerPage::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+/* ===== Card ===== */
+.registerCard {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 460px;
+  padding: 2.5rem 2rem;
+
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+
+  animation: cardEnter 0.6s ease forwards;
+  transition: transform 0.3s ease;
+}
+
+.registerCard:hover {
+  transform: translateY(-5px);
+}
+
+/* ===== Logo ===== */
+.logo {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.logo img {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  background: white;
+  padding: 5px;
+  transition: all 0.4s ease;
+}
+
+.logo img:hover {
+  transform: rotate(5deg) scale(1.1);
+}
+
+/* ===== Headings ===== */
+.registerCard h2 {
+  text-align: center;
+  color: white;
+  font-size: 1.6rem;
+}
+
+.collegeName {
+  text-align: center;
+  color: #e2e8f0;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  padding-bottom: 0.8rem;
+}
+
+/* ===== Inputs ===== */
+.inputGroup {
+  margin-bottom: 1.2rem;
+}
+
+.inputGroup input {
+  width: 100%;
+  padding: 0.85rem;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  background: rgba(255, 255, 255, 0.85);
+  transition: all 0.25s ease;
+}
+
+/* Hover */
+.inputGroup input:hover {
+  transform: scale(1.02);
+}
+
+/* Focus */
+.inputGroup input:focus {
+  transform: scale(1.03);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.3);
+}
+
+/* ===== Buttons ===== */
+.registerBtn,
+.backBtn {
+  width: 100%;
+  padding: 0.8rem;
+  border-radius: 10px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 0.7rem;
+  transition: all 0.25s ease;
+}
+
+/* Register Button */
+.registerBtn {
+  /* background: #16a34a; */
+  background: linear-gradient(135deg, #94f997, #43a047);
+  color: white;
+}
+
+.registerBtn:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  
+  background: #15b97d;
+}
+
+.registerBtn:active {
+  transform: scale(0.97);
+}
+
+/* Back Button */
+.backBtn {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.backBtn:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.9);
+}
+
+/* ===== Login Link ===== */
+.loginLink {
+  text-align: center;
+  color: #e2e8f0;
+  font-size: 0.9rem;
+}
+
+.loginLink a {
+  color: #93c5fd;
+  text-decoration: none;
+  position: relative;
+}
+
+/* underline animation */
+.loginLink a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0%;
+  height: 2px;
+  background: #93c5fd;
+  transition: width 0.3s ease;
+}
+
+.loginLink a:hover::after {
+  width: 100%;
+}
+
+/* ===== Animations ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes cardEnter {
+  from {
+    transform: translateY(40px) scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+/* ===== Mobile ===== */
+@media (max-width: 480px) {
+  .registerCard {
+    padding: 1.8rem;
+  }
+}

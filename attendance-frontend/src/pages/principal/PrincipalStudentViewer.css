@@ -1,0 +1,253 @@
+/* PrincipalStudentViewer.css - Orange/White Theme (Scoped to .principal-student-app) */
+
+.principal-student-app .psv-page {
+  min-height: 100vh;
+  padding: 2rem;
+  background: radial-gradient(circle at 10% 30%, #ffffff, #f8f9fa);
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+}
+
+/* Header section */
+.principal-student-app .psv-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.principal-student-app .psv-header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #f59e0b 0%, #ea580c 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  margin: 0 0 0.5rem 0;
+}
+
+.principal-student-app .header-underline {
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, #f59e0b, #ea580c);
+  border-radius: 2px;
+  margin: 0 auto 0.8rem auto;
+}
+
+.principal-student-app .psv-header p {
+  color: #64748b;
+  font-size: 1rem;
+}
+
+/* Filters row */
+.principal-student-app .psv-filters {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.principal-student-app .psv-filters select,
+.principal-student-app .psv-filters button {
+  padding: 0.6rem 1.2rem;
+  border-radius: 0.6rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.principal-student-app .psv-filters select {
+  background: white;
+  border: 1px solid #e2e8f0;
+  color: #1e293b;
+}
+
+.principal-student-app .psv-filters select:hover {
+  border-color: #fcd34d;
+}
+
+.principal-student-app .psv-filters select:focus {
+  outline: none;
+  border-color: #f59e0b;
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.1);
+}
+
+.principal-student-app .filter-btn {
+  background: linear-gradient(135deg, #f59e0b 0%, #ea580c 100%);
+  color: white;
+  border: none;
+  font-weight: 600;
+  box-shadow: 0 2px 6px rgba(245, 158, 11, 0.2);
+}
+
+.principal-student-app .filter-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(245, 158, 11, 0.3);
+  background: linear-gradient(135deg, #ea580c 0%, #c2410c 100%);
+}
+
+/* Loading spinner */
+.principal-student-app .psv-loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem;
+}
+
+.principal-student-app .spinner {
+  width: 48px;
+  height: 48px;
+  border: 3px solid #e2e8f0;
+  border-top: 3px solid #f59e0b;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Table wrapper – responsive scroll */
+.principal-student-app .psv-table-wrapper {
+  overflow-x: auto;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+}
+
+/* Table styles */
+.principal-student-app .psv-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  min-width: 700px;
+}
+
+.principal-student-app .psv-table thead tr {
+  background: linear-gradient(135deg, #fef3c7, #fde68a);
+  border-bottom: 2px solid #f59e0b;
+}
+
+.principal-student-app .psv-table th {
+  padding: 1rem;
+  text-align: left;
+  font-weight: 700;
+  color: #1e293b;
+  font-size: 0.9rem;
+}
+
+.principal-student-app .psv-table td {
+  padding: 0.9rem 1rem;
+  border-bottom: 1px solid #edf2f7;
+  color: #334155;
+}
+
+.principal-student-app .psv-table tbody tr:hover {
+  background: #fef3c7;
+  transition: background 0.2s;
+}
+
+/* Empty row */
+.principal-student-app .empty-row {
+  text-align: center;
+  padding: 2rem;
+  color: #64748b;
+  font-style: italic;
+}
+
+/* Total Count Badge & Filter Info */
+.principal-student-app .psv-count-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding: 0.8rem 1.2rem;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(8px);
+  border-radius: 1rem;
+  border: 1px solid #e2e8f0;
+}
+
+.principal-student-app .psv-count-badge {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, #fef3c7, #fde68a);
+  padding: 0.4rem 1rem;
+  border-radius: 2rem;
+}
+
+.principal-student-app .count-number {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #ea580c;
+}
+
+.principal-student-app .count-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.principal-student-app .psv-filter-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: #64748b;
+  background: #f8fafc;
+  padding: 0.3rem 1rem;
+  border-radius: 2rem;
+}
+
+.principal-student-app .filter-icon {
+  font-size: 1rem;
+}
+
+/* Responsive – mobile card layout */
+@media (max-width: 640px) {
+  .principal-student-app .psv-page {
+    padding: 1rem;
+  }
+  .principal-student-app .psv-header h1 {
+    font-size: 1.5rem;
+  }
+  .principal-student-app .psv-filters {
+    gap: 0.8rem;
+  }
+  .principal-student-app .psv-filters select,
+  .principal-student-app .psv-filters button {
+    width: 100%;
+  }
+  /* Hide table headers, use data-label */
+  .principal-student-app .psv-table thead {
+    display: none;
+  }
+  .principal-student-app .psv-table tbody tr {
+    display: block;
+    margin-bottom: 1rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.75rem;
+    padding: 0.5rem;
+  }
+  .principal-student-app .psv-table td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.5rem 0.8rem;
+    border-bottom: none;
+  }
+  .principal-student-app .psv-table td::before {
+    content: attr(data-label);
+    font-weight: 700;
+    color: #1e293b;
+    min-width: 100px;
+  }
+  .principal-student-app .psv-table td:last-child {
+    border-bottom: none;
+  }
+}

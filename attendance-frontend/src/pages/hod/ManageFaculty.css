@@ -1,0 +1,256 @@
+/* ManageFaculty.css - Orange & White Theme (Updated) */
+
+.manage-faculty-page {
+min-height: 100vh;
+padding: 40px 24px;
+background: radial-gradient(circle at 10% 30%, #ffffff, #f8f9fa);
+}
+
+/* Header Section */
+.manage-faculty-header {
+text-align: center;
+margin-bottom: 48px;
+}
+
+.header-badge {
+display: inline-block;
+background: #fef3c7;
+color: #ea580c;
+padding: 0.3rem 1rem;
+border-radius: 40px;
+font-size: 0.75rem;
+font-weight: 600;
+text-transform: uppercase;
+letter-spacing: 1px;
+margin-bottom: 1rem;
+}
+
+.manage-faculty-header h1 {
+font-size: 2.5rem;
+font-weight: 800;
+background: linear-gradient(135deg, #f59e0b 0%, #ea580c 100%);
+background-clip: text;
+-webkit-background-clip: text;
+color: transparent;
+margin-bottom: 12px;
+letter-spacing: -0.02em;
+}
+
+.manage-faculty-header p {
+font-size: 1rem;
+color: #64748b;
+max-width: 500px;
+margin: 0 auto;
+}
+
+/* Grid Layout */
+.manage-faculty-grid {
+max-width: 1200px;
+margin: 0 auto;
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+gap: 28px;
+}
+
+/* Faculty Card */
+.faculty-card {
+background: rgba(255, 255, 255, 0.95);
+backdrop-filter: blur(12px);
+border-radius: 1.5rem;
+padding: 32px 24px;
+box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.08);
+text-align: center;
+cursor: pointer;
+transition: all 0.3s ease;
+border: 1px solid #e2e8f0;
+position: relative;
+overflow: hidden;
+}
+
+.faculty-card::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+height: 4px;
+background: linear-gradient(90deg, #f59e0b, #ea580c);
+transform: scaleX(0);
+transition: transform 0.4s ease;
+}
+
+.faculty-card:hover::before {
+transform: scaleX(1);
+}
+
+.faculty-card:hover {
+transform: translateY(-8px);
+box-shadow: 0 25px 40px -12px rgba(245, 158, 11, 0.2);
+border-color: #fcd34d;
+}
+
+/* Card Icon */
+.faculty-card-icon {
+width: 70px;
+height: 70px;
+margin: 0 auto 20px;
+display: flex;
+align-items: center;
+justify-content: center;
+border-radius: 50%;
+font-size: 2.2rem;
+}
+
+/* Card Title */
+.faculty-card h2 {
+font-size: 1.5rem;
+font-weight: 700;
+color: #1e293b;
+margin-bottom: 12px;
+}
+
+/* Card Description */
+.faculty-card p {
+font-size: 0.9rem;
+color: #64748b;
+line-height: 1.6;
+margin-bottom: 24px;
+}
+
+/* Button */
+.faculty-card-btn {
+display: inline-flex;
+align-items: center;
+justify-content: center;
+gap: 8px;
+border: none;
+padding: 12px 24px;
+border-radius: 0.75rem;
+font-size: 0.9rem;
+font-weight: 600;
+color: white;
+cursor: pointer;
+width: 100%;
+}
+
+/* Button Variants */
+.add-card .faculty-card-btn {
+background: linear-gradient(135deg, #f59e0b, #ea580c);
+}
+
+.assign-card .faculty-card-btn {
+background: linear-gradient(135deg, #f97316, #ea580c);
+}
+
+.view-card .faculty-card-btn {
+background: linear-gradient(135deg, #fbbf24, #f59e0b);
+}
+
+/* ================= TABLE ================= */
+
+.faculty-table-container {
+margin-top: 40px;
+background: #ffffff;
+padding: 20px;
+border-radius: 16px;
+box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+}
+
+.faculty-table-container h2 {
+margin-bottom: 15px;
+font-size: 22px;
+color: #1f2937;
+}
+
+.faculty-table {
+width: 100%;
+border-collapse: collapse;
+border-radius: 12px;
+overflow: hidden;
+}
+
+/* Header */
+.faculty-table thead {
+background: linear-gradient(to right, #f97316, #fb923c);
+color: white;
+}
+
+/* 🔥 FIXED ALIGNMENT */
+.faculty-table th,
+.faculty-table td {
+text-align: center;
+padding: 12px;
+vertical-align: middle;
+}
+
+/* Header text */
+.faculty-table th {
+font-size: 14px;
+text-transform: uppercase;
+letter-spacing: 0.5px;
+}
+
+/* Body text */
+.faculty-table td {
+font-size: 14px;
+color: #374151;
+}
+
+/* Zebra stripes */
+.faculty-table tbody tr:nth-child(even) {
+background-color: #f9fafb;
+}
+
+/* Hover */
+.faculty-table tbody tr:hover {
+background-color: #fff7ed;
+}
+
+/* Buttons */
+.edit-btn {
+background: #3b82f6;
+color: white;
+border: none;
+padding: 6px 12px;
+border-radius: 8px;
+margin-right: 6px;
+cursor: pointer;
+}
+
+.edit-btn:hover {
+background: #2563eb;
+}
+
+.delete-btn {
+background: #ef4444;
+color: white;
+border: none;
+padding: 6px 12px;
+border-radius: 8px;
+cursor: pointer;
+}
+
+.delete-btn:hover {
+background: #dc2626;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+.manage-faculty-page {
+padding: 24px 16px;
+}
+
+.manage-faculty-header h1 {
+font-size: 1.8rem;
+}
+
+.manage-faculty-grid {
+grid-template-columns: 1fr;
+}
+
+.faculty-table th,
+.faculty-table td {
+font-size: 12px;
+padding: 8px;
+}
+}

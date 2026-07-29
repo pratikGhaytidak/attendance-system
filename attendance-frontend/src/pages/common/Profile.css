@@ -1,0 +1,587 @@
+/* Profile Container - New Modern Design */
+.profile-container-new {
+  min-height: calc(100vh - 80px);
+  padding: 2rem;
+  background: radial-gradient(circle at 10% 30%, #ffffff, #f8f9fa);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Grid Layout - 2 Columns */
+.profile-grid-new {
+  max-width: 1200px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 1.5rem;
+}
+
+/* Left Column - Profile Card */
+.profile-card-left-new {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease;
+}
+
+.profile-card-left-new:hover {
+  transform: translateY(-4px);
+}
+
+/* Avatar Section */
+.profile-avatar-new {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.avatar-ring-new {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 1rem;
+  background: linear-gradient(135deg, #f59e0b, #ea580c);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 15px rgba(245, 158, 11, 0);
+  }
+}
+
+.avatar-icon-new {
+  width: 110px;
+  height: 110px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3.5rem;
+}
+
+.profile-avatar-new h2 {
+  font-size: 1.5rem;
+  color: #1e293b;
+  margin: 0.5rem 0;
+}
+
+.profile-image {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: fill;
+  background: white;
+  display: block;
+}
+
+.role-badge-new {
+  display: inline-block;
+  padding: 0.3rem 1rem;
+  border-radius: 30px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* Stats Section */
+.profile-stats-new {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e2e8f0;
+}
+
+.stat-item-new {
+  text-align: center;
+}
+
+.stat-number-new {
+  font-size: 1.3rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #f59e0b, #ea580c);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.stat-label-new {
+  font-size: 0.7rem;
+  color: #64748b;
+  margin-top: 0.25rem;
+}
+
+.stat-divider-new {
+  width: 1px;
+  height: 30px;
+  background: #e2e8f0;
+}
+
+/* Contact Section */
+.profile-contact-new {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e2e8f0;
+}
+
+.profile-contact-new h4 {
+  font-size: 0.9rem;
+  color: #64748b;
+  margin-bottom: 1rem;
+}
+
+.contact-item-new {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border-radius: 0.75rem;
+  transition: background 0.2s;
+}
+
+.contact-item-new:hover {
+  background: #f8fafc;
+}
+
+.contact-icon-new {
+  font-size: 1.25rem;
+}
+
+.contact-label-new {
+  font-size: 0.7rem;
+  color: #94a3b8;
+  margin-bottom: 0.2rem;
+}
+
+.contact-value-new {
+  font-size: 0.85rem;
+  color: #1e293b;
+  font-weight: 500;
+}
+
+/* Right Column */
+.profile-card-right-new {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  border-radius: 1.5rem;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+/* Tabs */
+.profile-tabs-new {
+  display: flex;
+  border-bottom: 1px solid #e2e8f0;
+  background: #f8fafc;
+  padding: 0 1.5rem;
+}
+
+.tab-btn-new {
+  padding: 1rem 1.5rem;
+  background: none;
+  border: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #64748b;
+  cursor: pointer;
+  transition: all 0.2s;
+  position: relative;
+}
+
+.tab-btn-new:hover {
+  color: #f59e0b;
+}
+
+.tab-btn-new.active {
+  color: #f59e0b;
+}
+
+.tab-btn-new.active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #f59e0b, #ea580c);
+}
+
+/* Content Area */
+.profile-content-new {
+  padding: 1.5rem;
+  min-height: 400px;
+}
+
+/* Info Sections */
+.info-section-new {
+  margin-bottom: 2rem;
+}
+
+.info-section-new h3 {
+  font-size: 1rem;
+  color: #1e293b;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #f59e0b;
+  display: inline-block;
+}
+
+.info-grid-new {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.info-row-new {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem;
+  background: #f8fafc;
+  border-radius: 0.75rem;
+  transition: all 0.2s;
+}
+
+.info-row-new:hover {
+  background: #f1f5f9;
+  transform: translateX(5px);
+}
+
+.info-label-new {
+  font-weight: 600;
+  color: #64748b;
+  font-size: 0.85rem;
+}
+
+.info-value-new {
+  color: #1e293b;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+/* Settings Actions */
+.settings-actions-new {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.settings-btn-new {
+  padding: 0.75rem 1rem;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.75rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #64748b;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.settings-btn-new:hover {
+  background: #f1f5f9;
+  transform: translateX(5px);
+  color: #1e293b;
+  border-color: #cbd5e1;
+}
+
+.settings-btn-new.danger:hover {
+  background: #fee2e2;
+  color: #dc2626;
+  border-color: #fecaca;
+}
+
+/* Action Buttons */
+.profile-actions-new {
+  padding: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  border-top: 1px solid #e2e8f0;
+  background: #f8fafc;
+}
+
+.action-btn-new {
+  flex: 1;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 0.75rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.action-btn-new.logout {
+  background: linear-gradient(135deg, #f59e0b, #ea580c);
+  color: white;
+  box-shadow: 0 2px 6px rgba(245, 158, 11, 0.2);
+}
+
+.action-btn-new.logout:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+}
+
+.action-btn-new.edit {
+  background: #f8fafc;
+  color: #64748b;
+  border: 1px solid #e2e8f0;
+}
+
+.action-btn-new.edit:hover {
+  background: #f1f5f9;
+  transform: translateY(-2px);
+  color: #1e293b;
+}
+
+/* Loading & Error States */
+.loading-wrapper-new {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 3rem;
+}
+
+.spinner-new {
+  width: 50px;
+  height: 50px;
+  border: 4px solid #e2e8f0;
+  border-top: 4px solid #f59e0b;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.error-card-new {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  text-align: center;
+  max-width: 400px;
+  border: 1px solid #e2e8f0;
+}
+
+.error-icon-new {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.error-card-new h3 {
+  color: #dc2626;
+  margin-bottom: 1.5rem;
+}
+
+.retry-btn-new {
+  background: linear-gradient(135deg, #f59e0b, #ea580c);
+  color: white;
+  border: none;
+  padding: 0.6rem 1.5rem;
+  border-radius: 0.6rem;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .profile-grid-new {
+    grid-template-columns: 1fr;
+  }
+  
+  .profile-card-left-new {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .profile-container-new {
+    padding: 1rem;
+  }
+  
+  .profile-tabs-new {
+    padding: 0;
+  }
+  
+  .tab-btn-new {
+    flex: 1;
+    padding: 0.75rem;
+    font-size: 0.8rem;
+  }
+  
+  .info-row-new {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .profile-actions-new {
+    flex-direction: column;
+  }
+}
+
+/* Add these styles to your existing Profile.css */
+
+/* Attendance Tab Styles */
+.attendance-tab-new {
+  padding: 0.5rem 0;
+}
+
+.empty-attendance-new {
+  text-align: center;
+  padding: 3rem;
+  background: #f8fafc;
+  border-radius: 1rem;
+}
+
+.empty-attendance-new span {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.empty-attendance-new p {
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+/* Overall Attendance Circle */
+.overall-attendance-new {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.overall-circle-new {
+  position: relative;
+  width: 180px;
+  height: 180px;
+}
+
+.overall-circle-new svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.overall-percent-new {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.percent-number {
+  font-size: 2rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #f59e0b, #ea580c);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  display: block;
+}
+
+.percent-label {
+  font-size: 0.7rem;
+  color: #64748b;
+}
+
+/* Subject-wise Attendance */
+.subjects-attendance-new h3 {
+  font-size: 1rem;
+  color: #1e293b;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #f59e0b;
+  display: inline-block;
+}
+
+.subject-attendance-item-new {
+  background: #f8fafc;
+  border-radius: 0.75rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  transition: all 0.2s;
+}
+
+.subject-attendance-item-new:hover {
+  background: #f1f5f9;
+  transform: translateX(5px);
+}
+
+.subject-header-new {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.subject-name-new {
+  font-weight: 600;
+  color: #1e293b;
+  font-size: 0.9rem;
+}
+
+.subject-percent-new {
+  font-weight: 700;
+  color: #f59e0b;
+  font-size: 0.85rem;
+}
+
+/* Progress Bar */
+.progress-bar-new {
+  background: #e2e8f0;
+  border-radius: 0.5rem;
+  height: 6px;
+  overflow: hidden;
+  margin-bottom: 0.75rem;
+}
+
+.progress-fill-new {
+  height: 100%;
+  border-radius: 0.5rem;
+  background: linear-gradient(90deg, #f59e0b, #ea580c);
+  transition: width 0.6s ease;
+}
+
+.subject-stats-new {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.7rem;
+  color: #64748b;
+}
+
+.subject-stats-new span {
+  background: white;
+  padding: 0.2rem 0.5rem;
+  border-radius: 1rem;
+}

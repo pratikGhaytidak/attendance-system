@@ -1,0 +1,310 @@
+/* Container & Card */
+.attendance-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e9edf2 100%);
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.attendance-card {
+  max-width: 1200px;
+  width: 100%;
+  background: white;
+  border-radius: 1.5rem;
+  box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  transition: transform 0.2s;
+}
+
+/* Header */
+.attendance-header {
+  background: linear-gradient(135deg, #f59e0b 0%, #ea580c 100%);
+  padding: 1.8rem 2rem;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.attendance-header h1 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.faculty-info {
+  display: flex;
+  gap: 1.5rem;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.5rem 1.2rem;
+  border-radius: 40px;
+  backdrop-filter: blur(4px);
+}
+
+.faculty-name,
+.attendance-date {
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+/* Table Wrapper (scroll on small screens) */
+.table-wrapper {
+  overflow-x: auto;
+  padding: 0 1rem;
+}
+
+/* Table Styles */
+.attendance-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.attendance-table thead tr {
+  background: #f8f9fc;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.attendance-table th {
+  padding: 1rem 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: #1a2c3e;
+  letter-spacing: 0.3px;
+}
+
+.attendance-table td {
+  padding: 1rem 1rem;
+  border-bottom: 1px solid #edf2f7;
+  vertical-align: middle;
+  color: #2d3748;
+}
+
+/* Row hover & selected row style */
+.attendance-table tbody tr {
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.attendance-table tbody tr:hover {
+  background: #f7fafc;
+}
+
+.attendance-table tbody tr.present-row {
+  background: #e6fffa;
+  border-left: 3px solid #38b2ac;
+}
+
+/* Checkbox styling - custom */
+.checkbox-cell {
+  text-align: center;
+  width: 80px;
+}
+
+.checkbox-label {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+  width: 20px;
+  height: 20px;
+}
+
+.checkbox-label input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #fff;
+  border: 2px solid #cbd5e0;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.checkbox-label:hover input~.checkmark {
+  background-color: #f1f5f9;
+}
+
+.checkbox-label input:checked~.checkmark {
+  background-color: #48bb78;
+  border-color: #48bb78;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.checkbox-label input:checked~.checkmark:after {
+  display: block;
+}
+
+.checkbox-label .checkmark:after {
+  left: 6px;
+  top: 2px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+/* Buttons */
+.form-actions {
+  padding: 1.5rem 2rem 2rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  background: #fafbfc;
+  border-top: 1px solid #eef2f6;
+}
+
+.submit-btn,
+.cancel-btn {
+  padding: 0.7rem 1.8rem;
+  border: none;
+  border-radius: 40px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.submit-btn {
+  background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+  color: white;
+  box-shadow: 0 2px 6px rgba(72, 187, 120, 0.3);
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(72, 187, 120, 0.4);
+}
+
+.select-all-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+.select-all-btn {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(16, 185, 129, 0.25);
+}
+
+.select-all-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(16, 185, 129, 0.35);
+}
+
+.select-all-btn:active {
+  transform: scale(0.97);
+}
+
+.select-all-btn:focus {
+  outline: none;
+}
+
+.attendance-summary {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 18px;
+  margin-bottom: 18px;
+}
+
+.summary {
+  flex: 1;
+  min-width: 140px;
+  padding: 12px 16px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.present-summary {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.absent-summary {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.total-summary {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.cancel-btn {
+  background: #edf2f7;
+  color: #4a5568;
+}
+
+.cancel-btn:hover {
+  background: #e2e8f0;
+  transform: translateY(-2px);
+}
+
+/* No data */
+.no-data {
+  text-align: center;
+  padding: 2rem;
+  color: #a0aec0;
+  font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .attendance-container {
+    padding: 1rem;
+  }
+
+  .attendance-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .attendance-table th,
+  .attendance-table td {
+    padding: 0.75rem 0.5rem;
+    font-size: 0.85rem;
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
+
+  .submit-btn,
+  .cancel-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

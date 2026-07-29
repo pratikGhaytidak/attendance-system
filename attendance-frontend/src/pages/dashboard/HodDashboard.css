@@ -1,0 +1,344 @@
+/* HodDashboard.css - Orange & White Theme with Color Accents (Scoped to .hoddashboard-app) */
+
+.hoddashboard-app .hod-dashboard {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  font-family: 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
+  background: radial-gradient(circle at 10% 30%, #ffffff, #f8f9fa);
+  min-height: 100vh;
+}
+
+/* Header area */
+.hoddashboard-app .dashboard-header {
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.hoddashboard-app .dashboard-title {
+  font-size: 2rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #f59e0b 0%, #ea580c 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  margin: 0 0 0.5rem 0;
+  letter-spacing: -0.01em;
+}
+
+.hoddashboard-app .header-underline {
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #f59e0b, #ea580c, #fcd34d);
+  border-radius: 2px;
+  animation: underline-glow 2s ease-in-out infinite;
+}
+
+@keyframes underline-glow {
+  0%, 100% { opacity: 0.7; width: 80px; }
+  50% { opacity: 1; width: 100px; }
+}
+
+/* Info cards (faculty ID & dept ID) */
+.hoddashboard-app .info-grid {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.hoddashboard-app .info-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  border-radius: 1rem;
+  padding: 1rem 1.5rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  border-left: 5px solid #f59e0b;
+  border: 1px solid #e2e8f0;
+  min-width: 200px;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.hoddashboard-app .info-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 30px 30px 0;
+  border-color: transparent rgba(245, 158, 11, 0.1) transparent transparent;
+}
+
+.hoddashboard-app .info-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 20px -8px rgba(245, 158, 11, 0.2);
+  border-color: #fcd34d;
+}
+
+.hoddashboard-app .info-card p {
+  margin: 0;
+}
+
+.hoddashboard-app .info-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #64748b;
+  margin-bottom: 0.25rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.hoddashboard-app .info-label::before {
+  content: "📋";
+  font-size: 0.9rem;
+}
+
+.hoddashboard-app .info-value {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #1e293b;
+  font-weight: 700;
+  background: linear-gradient(135deg, #1e293b, #334155);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* Faculty section heading */
+.hoddashboard-app .faculty-heading {
+  font-size: 1.5rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, #f59e0b 0%, #ea580c 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  margin: 1.5rem 0 1rem 0;
+  border-bottom: 2px solid rgba(245, 158, 11, 0.3);
+  padding-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.hoddashboard-app .faculty-heading::before {
+  content: "👥";
+  font-size: 1.6rem;
+  background: none;
+  background-clip: text;
+-webkit-background-clip: text;
+  color: #f59e0b;
+}
+
+/* Faculty grid */
+.hoddashboard-app .faculty-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+/* Faculty card */
+.hoddashboard-app .faculty-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  border-radius: 1rem;
+  padding: 1.25rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+  border: 1px solid #e2e8f0;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.hoddashboard-app .faculty-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #f59e0b, #fcd34d, #ea580c);
+  transform: scaleX(0);
+  transition: transform 0.3s;
+}
+
+.hoddashboard-app .faculty-card:hover::before {
+  transform: scaleX(1);
+}
+
+.hoddashboard-app .faculty-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 25px -12px rgba(245, 158, 11, 0.25);
+  border-color: #fcd34d;
+  background: white;
+}
+
+/* Avatar */
+.hoddashboard-app .faculty-avatar {
+  width: 52px;
+  height: 52px;
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.3rem;
+  color: #ea580c;
+  flex-shrink: 0;
+  transition: all 0.3s;
+  box-shadow: 0 2px 8px rgba(245, 158, 11, 0.2);
+}
+
+.hoddashboard-app .faculty-card:hover .faculty-avatar {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #fde68a 0%, #f59e0b 100%);
+  color: white;
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.4);
+}
+
+.hoddashboard-app .faculty-info {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Faculty name */
+.hoddashboard-app .faculty-name {
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: #1e293b;
+  margin: 0;
+  transition: color 0.2s;
+}
+
+/* Faculty ID */
+.hoddashboard-app .faculty-id-small {
+  font-size: 0.75rem;
+  color: #64748b;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+  margin-left: auto;
+}
+
+.hoddashboard-app .faculty-id-small::before {
+  content: "🆔";
+  font-size: 0.7rem;
+}
+
+/* Loading spinner - colorful */
+.hoddashboard-app .loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 0;
+}
+
+.hoddashboard-app .spinner {
+  width: 48px;
+  height: 48px;
+  border: 3px solid #e2e8f0;
+  border-top: 3px solid #f59e0b;
+  border-right: 3px solid #fcd34d;
+  border-radius: 50%;
+  animation: hoddashboard-spin 0.8s linear infinite;
+}
+
+@keyframes hoddashboard-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Error state - with color */
+.hoddashboard-app .error-container {
+  background: linear-gradient(135deg, #fef2f2, #fee2e2);
+  border-left: 5px solid #ef4444;
+  padding: 1rem 1.5rem;
+  border-radius: 0.75rem;
+  margin: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  box-shadow: 0 2px 8px rgba(239, 68, 68, 0.1);
+}
+
+.hoddashboard-app .error-message {
+  color: #b91c1c;
+  font-weight: 600;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hoddashboard-app .error-message::before {
+  content: "⚠️";
+  font-size: 1.1rem;
+}
+
+.hoddashboard-app .retry-button {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  color: white;
+  border: none;
+  padding: 0.5rem 1.2rem;
+  border-radius: 0.6rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 2px 6px rgba(220, 38, 38, 0.2);
+}
+
+.hoddashboard-app .retry-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(220, 38, 38, 0.3);
+  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+}
+
+/* Empty state - with subtle color */
+.hoddashboard-app .empty-state {
+  text-align: center;
+  padding: 2.5rem;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  border-radius: 1rem;
+  color: #64748b;
+  border: 1px dashed #fcd34d;
+  margin-top: 1rem;
+  transition: all 0.2s;
+}
+
+.hoddashboard-app .empty-state:hover {
+  border-color: #f59e0b;
+  background: rgba(255, 245, 235, 0.95);
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .hoddashboard-app .hod-dashboard {
+    padding: 1rem;
+  }
+  .hoddashboard-app .dashboard-title {
+    font-size: 1.5rem;
+  }
+  .hoddashboard-app .info-grid {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .hoddashboard-app .faculty-grid {
+    gap: 1rem;
+  }
+}
