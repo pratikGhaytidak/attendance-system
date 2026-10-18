@@ -68,7 +68,7 @@ if ($result->num_rows > 0) {
     ];
 
     // ✅ If HOD, fetch department
-    if ($row['role'] == 'hod') {
+    if ($row['role'] == ('hod' || 'da')) {
         $faculty_id = $row['id'];
 
         $deptQuery = "SELECT id,name FROM departments WHERE hod_id = '$faculty_id'";

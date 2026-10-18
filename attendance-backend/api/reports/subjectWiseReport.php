@@ -22,7 +22,7 @@ SELECT
     sub.name AS subject_name,
     sub.course_code,
     sub.semester,
-    sub.semester_start_date,
+    sub.courseStartDate,
     a.date,
     a.status
 FROM attendance a
@@ -30,7 +30,7 @@ JOIN students st ON a.student_id = st.id
 JOIN subjects sub ON a.subject_id = sub.id
 WHERE 
     a.subject_id = ?
-    AND a.date BETWEEN sub.semester_start_date AND CURDATE()
+    AND a.date BETWEEN sub.courseStartDate AND CURDATE()
 ORDER BY 
     CAST(st.roll_no AS UNSIGNED), st.roll_no
 ";
@@ -66,7 +66,7 @@ while ($row = $result->fetch_assoc()) {
             "subject_name" => $row['subject_name'],
             "course_code" => $row['course_code'],
             "semester" => $row['semester'],
-            "semester_start_date" => $row['semester_start_date']
+            "courseStartDate" => $row['courseStartDate']
         ];
     }
 

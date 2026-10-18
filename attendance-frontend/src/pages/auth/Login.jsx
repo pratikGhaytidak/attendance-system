@@ -83,11 +83,17 @@ function Login() {
           localStorage.setItem("student_id", data.id);
           console.log("student email is: ", localStorage.getItem("email"));
           navigate("/student-dashboard");
-
+        }
+        else if (data.role === "da") {
+          localStorage.setItem("department_id", data.department_id);
+          localStorage.setItem("department_name", data.department_name);
+          navigate("/da-dashboard");
         }
         else if (data.role === "hod") {
           localStorage.setItem("department_id", data.department_id);
           localStorage.setItem("department_name", data.department_name);
+          console.log("Department id: ",data.department_id);
+          console.log("Department id: ",data.department_name);
           navigate("/hod-dashboard");
         }
         else if (data.role === "principal") {

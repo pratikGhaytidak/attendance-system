@@ -39,6 +39,8 @@ import PrincipalFacultyDirectory from "../pages/principal/PrincipalFacultyDirect
 import ManageHod from "../pages/principal/ManageHod";
 import ForgotPassword from "../pages/common/ForgotPassword";
 import ResetPassword from "../pages/common/ResetPassword";
+import MarkAttendance2 from "../pages/faculty/MarkAttendance2";
+import DaDashboard from "../pages/dashboard/DaDashboard";
 
 
 function AppRoutes() {
@@ -66,6 +68,16 @@ function AppRoutes() {
           <ProtectedRoute role="faculty">
             <Layout>
               <Dashboard />
+            </Layout>
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/da-dashboard"
+        element={
+          <ProtectedRoute role="da">
+            <Layout>
+              <DaDashboard />
             </Layout>
           </ProtectedRoute>
         }
@@ -102,7 +114,7 @@ function AppRoutes() {
         path="/mark-attendance/:subject_id/:departmentId/:year"
         element={
           <ProtectedRoute role="faculty">
-            <Layout> <MarkAttendance /> </Layout>
+            <Layout> <MarkAttendance2 /> </Layout>
           </ProtectedRoute>
         }
       />
@@ -309,6 +321,7 @@ function AppRoutes() {
       {/* 404 */}
       <Route path="*" element={<h2>Page Not Found</h2>} />
     </Routes>
+    
 
   );
 }

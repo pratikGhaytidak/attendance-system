@@ -37,13 +37,14 @@ if (!$conn) {
     ]);
     exit();
 }
+$json_data = file_get_contents('php://input');
 
 // ---------------- GET DATA ----------------
 $name = $_POST['name'] ?? '';
 $roll_no = $_POST['roll_no'] ?? '';
 $department_id = $_POST['department_id'] ?? '';
 $year = $_POST['year'] ?? '';
-$batch = $_POST['batch'] ?? '';
+$practical_batch = $_POST['batch'] ?? null;
 $email = $_POST['email'] ?? '';
 $faculty_id = $_POST['faculty_id'] ?? null;
 
@@ -113,7 +114,7 @@ if (isset($_FILES['student_image']) && $_FILES['student_image']['error'] === 0) 
 $sql = "INSERT INTO students 
 (name, roll_no, department_id, year, batch, password, email)
 VALUES 
-('$name', '$roll_no', '$department_id', '$year', '$batch', '$password', '$email')";
+('$name', '$roll_no', '$department_id', '$year', '$practical_batch', '$password', '$email')";
 
 if (mysqli_query($conn, $sql)) {
     echo json_encode([
