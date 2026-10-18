@@ -9,7 +9,7 @@ function PrincipalStudentViewer() {
 
   const fetchStudents = () => {
     setLoading(true);
-    let url = "http://localhost/attendance-system/attendance-backend/api/principal/getStudents.php?";
+    let url = "https://gcekattendance.in/api/principal/getStudents.php?";
     if (departmentId) url += `department_id=${departmentId}&`;
     if (year) url += `year=${year}`;
     fetch(url)

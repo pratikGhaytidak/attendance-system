@@ -17,7 +17,7 @@ function EditAttendance() {
       try {
         setError("");
         const res = await fetch(
-          `http://localhost/attendance-system/attendance-backend/api/attendance/getAttendanceById.php?id=${id}`
+          `https://gcekattendance.in/api/attendance/getAttendanceById.php?id=${id}`
         );
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const result = await res.json();
@@ -42,7 +42,7 @@ function EditAttendance() {
     setError("");
     try {
       const res = await fetch(
-        "http://localhost/attendance-system/attendance-backend/api/attendance/updateAttendance.php",
+        "https://gcekattendance.in/api/attendance/updateAttendance.php",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

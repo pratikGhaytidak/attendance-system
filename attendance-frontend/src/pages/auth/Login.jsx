@@ -29,7 +29,7 @@ function Login() {
     const password = e.target.password.value;
 
     try {
-      const res = await fetch("http://localhost/attendance-system/attendance-backend/api/auth/login_old.php", {
+      const res = await fetch("https://gcekattendance.in/api/auth/login_old.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),
@@ -37,7 +37,7 @@ function Login() {
 
       const data = await res.json();
 
-      // const res = await fetch("http://attenzo.site.jehttp://localhost/attendance-system/attendance-backend/api/auth/loginNew.php", {
+      // const res = await fetch("http://attenzo.site.jehttps://gcekattendance.in/api/auth/loginNew.php", {
       //   method: "POST",
       //   headers: {
       //     "Content-Type": "application/json"
@@ -56,7 +56,7 @@ function Login() {
 
       // const data = JSON.parse(responseText);
 
-      // fetch("localhosthttp://localhost/attendance-system/attendance-backend/api/auth/simple.php")
+      // fetch("localhosthttps://gcekattendance.in/api/auth/simple.php")
       //   .then(res => res.text())
       //   .then(data => console.log(data))
       //   .catch(err => console.log(err));

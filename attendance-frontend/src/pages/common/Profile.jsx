@@ -33,7 +33,7 @@ function Profile() {
         // const profileData = await profileRes.json();
 
         const profileRes = await fetch(
-          `http://localhost/attendance-system/attendance-backend/api/common/getProfile.php?email=${encodeURIComponent(email)}`
+          `https://gcekattendance.in/api/common/getProfile.php?email=${encodeURIComponent(email)}`
         );
 
         if (!profileRes.ok) {
@@ -52,7 +52,7 @@ function Profile() {
         // Fetch attendance data for students
         if (role === "student" && studentId) {
           const attendanceRes = await fetch(
-            `http://localhost/attendance-system/attendance-backend/api/student/getStudentAttendance.php?student_id=${studentId}`
+            `https://gcekattendance.in/api/student/getStudentAttendance.php?student_id=${studentId}`
           );
           const attendanceData = await attendanceRes.json();
 
@@ -121,7 +121,7 @@ function Profile() {
     const facultyId = localStorage.getItem("faculty_id");
 
     if ((user?.role === "faculty" || user?.role === "hod" || user?.role === "principal") && facultyId) {
-      fetch(`http://localhost/attendance-system/attendance-backend/api/faculty/getAssignedSubjects.php?faculty_id=${facultyId}`)
+      fetch(`https://gcekattendance.in/api/faculty/getAssignedSubjects.php?faculty_id=${facultyId}`)
         .then((res) => res.json())
         .then((data) => {
           if (data.status) {

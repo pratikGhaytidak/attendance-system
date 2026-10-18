@@ -44,7 +44,7 @@ function UpdateStudent() {
 
   const fetchDepartments = async () => {
     try {
-      const res = await fetch("http://localhost/attendance-system/attendance-backend/api/department/getDepartments.php");
+      const res = await fetch("https://gcekattendance.in/api/department/getDepartments.php");
       const data = await res.json();
       setDepartments(data.data || data || []);
     } catch (error) {
@@ -56,7 +56,7 @@ function UpdateStudent() {
     try {
       setLoading(true);
       const res = await fetch(
-        `http://localhost/attendance-system/attendance-backend/api/student/getStudentById.php?id=${studentId}`
+        `https://gcekattendance.in/api/student/getStudentById.php?id=${studentId}`
       );
       const data = await res.json();
 
@@ -111,7 +111,7 @@ function UpdateStudent() {
       setMessage("");
 
       const res = await fetch(
-        "http://localhost/attendance-system/attendance-backend/api/faculty/updateStudent.php",
+        "https://gcekattendance.in/api/faculty/updateStudent.php",
         {
           method: "POST",
           headers: {

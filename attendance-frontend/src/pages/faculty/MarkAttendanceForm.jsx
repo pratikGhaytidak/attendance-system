@@ -22,7 +22,7 @@ function MarkAttendanceForm() {
   useEffect(() => {
     if (!facultyId) return;
 
-    fetch(`http://localhost/attendance-system/attendance-backend/api/subject/getSubjects.php?faculty_id=${facultyId}`)
+    fetch(`https://gcekattendance.in/api/subject/getSubjects.php?faculty_id=${facultyId}`)
       .then(res => res.json())
       .then(data => {
         setSubjects(data);

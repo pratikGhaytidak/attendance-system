@@ -19,9 +19,9 @@ function Reports() {
         let apiUrl = "";
 
         if (role === "hod") {
-            apiUrl = `http://localhost/attendance-system/attendance-backend/api/hod/getSubjectByDepartment.php?department_id=${departmentId}`;
+            apiUrl = `https://gcekattendance.in/api/hod/getSubjectByDepartment.php?department_id=${departmentId}`;
         } else {
-            apiUrl = `http://localhost/attendance-system/attendance-backend/api/subject/getSubjects.php?faculty_id=${facultyId}`;
+            apiUrl = `https://gcekattendance.in/api/subject/getSubjects.php?faculty_id=${facultyId}`;
         }
 
         fetch(apiUrl)
@@ -57,7 +57,7 @@ function Reports() {
         setSubjectInfo(null);
 
         fetch(
-            `http://localhost/attendance-system/attendance-backend/api/reports/subjectWiseReport.php?subject_id=${subjectId}`
+            `https://gcekattendance.in/api/reports/subjectWiseReport.php?subject_id=${subjectId}`
         )
             .then((res) => res.json())
             .then((data) => {

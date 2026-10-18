@@ -19,7 +19,7 @@ function ManageStudents() {
       return;
     }
 
-    fetch(`http://localhost/attendance-system/attendance-backend/api/student/getStudents.php?department_id=${departmentId}&year=${year}`)
+    fetch(`https://gcekattendance.in/api/student/getStudents.php?department_id=${departmentId}&year=${year}`)
       .then(res => res.json())
       .then(data => {
         setStudents(data);

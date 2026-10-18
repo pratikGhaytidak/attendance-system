@@ -17,7 +17,7 @@ function RecentAttendance() {
     const fetchAttendance = async () => {
       try {
         const res = await fetch(
-          `http://localhost/attendance-system/attendance-backend/api/attendance/getAttendanceByFaculty.php?faculty_id=${facultyId}`
+          `https://gcekattendance.in/api/attendance/getAttendanceByFaculty.php?faculty_id=${facultyId}`
         );
 
         const json = await res.json();

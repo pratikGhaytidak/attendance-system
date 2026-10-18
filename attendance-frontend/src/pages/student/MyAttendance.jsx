@@ -18,7 +18,7 @@ function StudentAttendance() {
     setLoading(true);
     setError(null);
 
-    fetch(` http://localhost/attendance-system/attendance-backend/api/student/getStudentAttendance.php?student_id=${studentId}`)
+    fetch(` https://gcekattendance.in/api/student/getStudentAttendance.php?student_id=${studentId}`)
       .then((res) => {
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         return res.json();

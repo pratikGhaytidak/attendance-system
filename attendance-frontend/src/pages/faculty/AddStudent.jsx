@@ -77,7 +77,7 @@ function AddStudent() {
             data.append("student_image", formData.student_image);
         }
 
-        fetch("http://localhost/attendance-system/attendance-backend/api/student/addStudent.php", {
+        fetch("https://gcekattendance.in/api/student/addStudent.php", {
             method: "POST",
             body: data,
         })

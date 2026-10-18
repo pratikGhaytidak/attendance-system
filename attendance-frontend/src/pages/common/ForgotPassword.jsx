@@ -17,7 +17,7 @@ function ForgotPassword() {
 
     try {
       const res = await fetch(
-        "http://localhost/attendance-system/attendance-backend/api/common/sendResetLink.php",
+        "https://gcekattendance.in/api/common/sendResetLink.php",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

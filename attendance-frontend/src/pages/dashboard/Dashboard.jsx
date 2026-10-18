@@ -11,7 +11,7 @@ function FacultyDashboard() {
 
 
   useEffect(() => {
-    fetch(`http://localhost/attendance-system/attendance-backend/api/subject/getSubjects.php?faculty_id=${facultyId}`)
+    fetch(`https://gcekattendance.in/api/subject/getSubjects.php?faculty_id=${facultyId}`)
       .then((res) => res.json())
       .then((data) => {
         setSubjects(data);
@@ -26,7 +26,7 @@ function FacultyDashboard() {
     const fetchAttendance = async () => {
       try {
         const res = await fetch(
-          `http://localhost/attendance-system/attendance-backend/api/attendance/getAttendanceByFaculty.php?faculty_id=${facultyId}`
+          `https://gcekattendance.in/api/attendance/getAttendanceByFaculty.php?faculty_id=${facultyId}`
         );
 
         const data = await res.json();
@@ -75,7 +75,7 @@ function FacultyDashboard() {
 
   //   if (!facultyId) return;
 
-  //   fetch(`http://localhost/attendance-system/attendance-backend/api/faculty/getClassTeacher.php?faculty_id=${facultyId}`)
+  //   fetch(`https://gcekattendance.in/api/faculty/getClassTeacher.php?faculty_id=${facultyId}`)
   //     .then((res) => res.json())
   //     .then((data) => {
   //       if (data.isClassTeacher) {
@@ -97,7 +97,7 @@ function FacultyDashboard() {
 
     if (!facultyId) return;
 
-    fetch(`http://localhost/attendance-system/attendance-backend/api/faculty/getClassTeacher.php?faculty_id=${facultyId}`)
+    fetch(`https://gcekattendance.in/api/faculty/getClassTeacher.php?faculty_id=${facultyId}`)
       .then((res) => res.json())
       .then((data) => {
         if (data.isClassTeacher) {

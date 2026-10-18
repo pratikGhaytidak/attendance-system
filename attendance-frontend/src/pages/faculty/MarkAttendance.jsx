@@ -19,7 +19,7 @@ function MarkAttendance() {
     const name = localStorage.getItem("name");
     setFacultyName(name || "Faculty");
 
-    fetch(`http://localhost/attendance-system/attendance-backend/api/student/getStudents.php?department_id=${departmentId}&year=${year}`)
+    fetch(`https://gcekattendance.in/api/student/getStudents.php?department_id=${departmentId}&year=${year}`)
       .then((res) => res.json())
       .then((data) => {
         const studentList = data.data || data || [];
@@ -77,7 +77,7 @@ function MarkAttendance() {
       status: attendance[stu.id] ? "Present" : "Absent",
     }));
 
-    fetch("http://localhost/attendance-system/attendance-backend/api/attendance/markAttendance.php", {
+    fetch("https://gcekattendance.in/api/attendance/markAttendance.php", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload),

@@ -51,7 +51,7 @@ function ChangePassword() {
         setMessage("");
 
         try {
-            const res = await fetch("http://localhost/attendance-system/attendance-backend/api/common/changePassword.php", {
+            const res = await fetch("https://gcekattendance.in/api/common/changePassword.php", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"

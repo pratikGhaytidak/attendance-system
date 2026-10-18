@@ -30,7 +30,7 @@ const FacultySubjects = () => {
   const fetchMappings = () => {
     setLoading(true);
     fetch(
-      `http://localhost/attendance-system/attendance-backend/api/hod/getFacultySubjectMapping.php?department_id=${deptId}`
+      `https://gcekattendance.in/api/hod/getFacultySubjectMapping.php?department_id=${deptId}`
     )
       .then((res) => res.json())
       .then((res) => {
@@ -56,7 +56,7 @@ const FacultySubjects = () => {
 
     try {
       const res = await fetch(
-        "http://localhost/attendance-system/attendance-backend/api/hod/deleteFacultySubjectMapping.php",
+        "https://gcekattendance.in/api/hod/deleteFacultySubjectMapping.php",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
