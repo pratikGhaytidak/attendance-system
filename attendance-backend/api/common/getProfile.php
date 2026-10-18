@@ -29,7 +29,7 @@ $stmt = $conn->prepare("
         s.name,
         s.email,
         s.password,
-        s.batch,
+        s.practicalBatch,
         s.year,
         d.name AS department,
         CASE 
@@ -42,6 +42,10 @@ $stmt = $conn->prepare("
     LEFT JOIN departments d ON s.department_id = d.id
     WHERE s.email = ?
 ");
+
+if (!$stmt) {
+    die("Student query failed: " . $conn->error);
+}
 
 $stmt->bind_param("s", $email);
 $stmt->execute();
@@ -75,6 +79,10 @@ $stmt = $conn->prepare("
     WHERE f.email = ?
 ");
 
+if (!$stmt) {
+    die("Faculty query failed: " . $conn->error);
+}
+
 $stmt->bind_param("s", $email);
 $stmt->execute();
 $result = $stmt->get_result();
@@ -100,6 +108,10 @@ $stmt = $conn->prepare("
     FROM admin
     WHERE email = ?
 ");
+
+if (!$stmt) {
+    die("Admin query failed: " . $conn->error);
+}
 
 $stmt->bind_param("s", $email);
 $stmt->execute();

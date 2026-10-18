@@ -27,10 +27,21 @@ function Profile() {
 
       try {
         // Fetch profile data
+        // const profileRes = await fetch(
+        //   `x${email}`
+        // );
+        // const profileData = await profileRes.json();
+
         const profileRes = await fetch(
-          `http://localhost/attendance-system/attendance-backend/api/common/getProfile.php?email=${email}`
+          `http://localhost/attendance-system/attendance-backend/api/common/getProfile.php?email=${encodeURIComponent(email)}`
         );
+
+        if (!profileRes.ok) {
+          throw new Error(`Profile API failed: ${profileRes.status}`);
+        }
+
         const profileData = await profileRes.json();
+
 
         if (profileData.status) {
           setUser(profileData.data);
@@ -391,7 +402,7 @@ function Profile() {
                   </div>
                 )}
 
-                {(user.year || user.batch) && (
+                {(user.year || user.practicalBatch) && (
                   <div className="info-section-new">
                     <h3>Academic Details</h3>
                     <div className="info-grid-new">
@@ -401,10 +412,10 @@ function Profile() {
                           <span className="info-value-new">{user.year}</span>
                         </div>
                       )}
-                      {user.batch && (
+                      {user.practicalBatch && (
                         <div className="info-row-new">
                           <span className="info-label-new">Batch</span>
-                          <span className="info-value-new">{user.batch}</span>
+                          <span className="info-value-new">{user.practicalBatch}</span>
                         </div>
                       )}
                     </div>
